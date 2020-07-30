@@ -23,5 +23,10 @@ public class CustomerController {
 
 
     }
+    @GetMapping("")
+    public String lol()
+    {
+        return "pal";
+    }
 
 }
