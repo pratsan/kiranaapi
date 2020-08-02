@@ -17,8 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/customers")
 
 public class CustomerController {
-    @Autowired
-    private FirebaseAuth firebaseAuth;
+
 @Autowired
     CustomerService customerService;
 @PostMapping("")
@@ -26,6 +25,10 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.registerCustomer(customerDto), HttpStatus.OK);
 
     }
-
+@GetMapping("")
+    public String demo()
+{
+    return "success";
+}
 
 }
