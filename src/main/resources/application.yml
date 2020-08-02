@@ -4,38 +4,38 @@ spring:
   path: /h2
 
   datasource:
-   platform: h2
-    url: jdbc:h2://localhost:8080/h2
-    username: sa
-    password: 1234
-    driverClassName: org.h2.Driver
-#   datasource:
-#     url: jdbc:mysql://localhost:3306/test
-#     username: root
-#     driver-class-name: com.mysql.jdbc.Driver
-   mail:
-    port: 25
-    username: pratsanyou02@gmail.com
-    password: Ashapal1@
-    host: smtp.gmail.com
-    properties:
-      mail:
-        smtp:
-          socketFactory:
-            port: 465
-            class: javax.net.ssl.SSLSocketFactory
-          starttls:
-            enable: true
+    platform: h2
+      url: jdbc:h2://localhost:8080/h2
+      username: sa
+      password: 1234
+      driverClassName: org.h2.Driver
+    #   datasource:
+    #     url: jdbc:mysql://localhost:3306/test
+    #     username: root
+    #     driver-class-name: com.mysql.jdbc.Driver
+    mail:
+      port: 25
+      username: pratsanyou02@gmail.com
+      password: Ashapal1@
+      host: smtp.gmail.com
+      properties:
+        mail:
+          smtp:
+            socketFactory:
+              port: 465
+              class: javax.net.ssl.SSLSocketFactory
+            starttls:
+              enable: true
 
 
 
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect:org.hibernate.dialect.MySQLDialect
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect:org.hibernate.dialect.MySQLDialect
 
 server:
   port: 9090

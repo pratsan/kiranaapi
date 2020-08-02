@@ -1,5 +1,7 @@
 package com.pratsan.kirana.controller;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserRecord;
 import com.pratsan.kirana.dto.CustomerDto;
 import com.pratsan.kirana.dto.ResponseDto;
 import com.pratsan.kirana.exception.CustomerException;
@@ -15,18 +17,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/customers")
 
 public class CustomerController {
+    @Autowired
+    private FirebaseAuth firebaseAuth;
 @Autowired
     CustomerService customerService;
 @PostMapping("")
     public ResponseEntity<ResponseDto> registerCustomer(@RequestBody CustomerDto customerDto) throws OtpException, EmailException, CustomerException {
         return new ResponseEntity<>(customerService.registerCustomer(customerDto), HttpStatus.OK);
 
+    }
 
-    }
-    @GetMapping("")
-    public String lol()
-    {
-        return "pal";
-    }
 
 }
