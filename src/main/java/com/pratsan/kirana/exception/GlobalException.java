@@ -1,6 +1,7 @@
 package com.pratsan.kirana.exception;
 
 import com.pratsan.kirana.dto.ResponseDto;
+import com.pratsan.kirana.entity.CustomerAddress;
 import com.pratsan.kirana.util.ApplicationConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,31 +16,13 @@ public class GlobalException extends ResponseEntityExceptionHandler {
     Logger log= LoggerFactory.getLogger(GlobalException.class);
     @Autowired
     ResponseDto responseDto;
-@ExceptionHandler(OtpException.class)
-    public ResponseEntity<ResponseDto> otpError(OtpException otpException)
-{
-    log.error("otp exception");
-    responseDto.setObject(null);
-    responseDto.setStatus_msg(otpException.getMessage());
-    responseDto.setStatus_code(ApplicationConstant.FAILURE_CODE);
-    return new ResponseEntity<>(responseDto, HttpStatus.BAD_GATEWAY);
-}
-@ExceptionHandler(EmailException.class)
-public ResponseEntity<ResponseDto> EmailotpError(EmailException emailException)
-{
-    log.error("email exception");
-    responseDto.setObject(null);
-    responseDto.setStatus_msg(emailException.getMessage());
-    responseDto.setStatus_code(ApplicationConstant.FAILURE_CODE);
-    return new ResponseEntity<>(responseDto, HttpStatus.BAD_GATEWAY);
-}
 
-@ExceptionHandler(CustomerException.class)
-public ResponseEntity<ResponseDto> customerError(CustomerException customerException)
+@ExceptionHandler(CustomerAddressException.class)
+public ResponseEntity<ResponseDto> customerError(CustomerAddressException customerAddressException)
 {
-    log.error("email exception");
+    log.error("address not found");
     responseDto.setObject(null);
-    responseDto.setStatus_msg(customerException.getMessage());
+    responseDto.setStatus_msg(customerAddressException.getMessage());
     responseDto.setStatus_code(ApplicationConstant.FAILURE_CODE);
     return new ResponseEntity<>(responseDto, HttpStatus.ALREADY_REPORTED);
 }

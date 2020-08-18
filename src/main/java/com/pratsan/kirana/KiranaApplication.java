@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -19,10 +20,11 @@ import springfox.documentation.spring.web.plugins.Docket;
 @SwaggerDefinition
 public class KiranaApplication {
 @Bean
-	SimpleMailMessage simpleMailMessage()
+	public SimpleMailMessage simpleMailMessage()
 {
 	return new SimpleMailMessage();
 }
+
 	@Bean
 	ResponseDto<?> responseDto()
 {
