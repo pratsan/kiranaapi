@@ -2,6 +2,7 @@ package com.pratsan.kirana.service;
 
 import com.pratsan.kirana.dto.CustomerAddressDto;
 import com.pratsan.kirana.dto.CustomerDto;
+import com.pratsan.kirana.dto.ProductDto;
 import com.pratsan.kirana.dto.ResponseDto;
 import com.pratsan.kirana.exception.CustomerAddressException;
 import com.pratsan.kirana.exception.CustomerException;
@@ -15,5 +16,10 @@ public interface CustomerService {
   ResponseDto storeCustomerAddress(String customerId,CustomerAddressDto customerAddressDto) throws CustomerException, CustomerAddressException;
   ResponseDto registerCustomer(String customerId);
 
+  /**
+   * customer product service
+   */
+ResponseDto getAllProducts();
+  ResponseDto storeProduct(String sellerId, ProductDto productDto);
 
 }
